@@ -48,8 +48,7 @@ function UserRoutes(app) {
 
     };
     const signout = (req, res) => {
-        req.session.destroy();
-        // currentUser = null;
+        currentUser = null;
         res.json(200);
     };
     const account = async (req, res) => {

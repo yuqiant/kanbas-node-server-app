@@ -7,11 +7,7 @@ import ModuleRoutes from './modules/routes.js';
 import UserRoutes from "./users/routes.js";
 import session from "express-session";
 import mongoose from "mongoose";
-// const DB_CONNECTION_STRING = "mongodb+srv://yuqiant07:<super123>@cluster0.egv3uho.mongodb.net/?retryWrites=true&w=majority"
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
-
-mongoose.connect(CONNECTION_STRING);
-// mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
+mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import cors from "cors";
 import "dotenv/config";
 const app = express()
@@ -24,15 +20,6 @@ const sessionOptions = {
     resave: false,
     saveUninitialized: false,
 };
-if (process.env.NODE_ENV !== "development") {
-    sessionOptions.proxy = true;
-    sessionOptions.cookie = {
-        sameSite: "none",
-        secure: true,
-    };
-}
-app.use(session(sessionOptions));
-
 app.use(
     session(sessionOptions)
 );

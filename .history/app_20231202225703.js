@@ -8,8 +8,7 @@ import UserRoutes from "./users/routes.js";
 import session from "express-session";
 import mongoose from "mongoose";
 // const DB_CONNECTION_STRING = "mongodb+srv://yuqiant07:<super123>@cluster0.egv3uho.mongodb.net/?retryWrites=true&w=majority"
-const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
-
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 mongoose.connect(CONNECTION_STRING);
 // mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 import cors from "cors";
